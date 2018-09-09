@@ -9,21 +9,7 @@ public class CStarItem : MonoBehaviour {
     {
         if (collision.name == "PlayerShip")
         {
-            GameObject starCount = GameObject.Find("StarScoreText");
-            Text countText = starCount.GetComponent<Text>();
-
-            int count = int.Parse(countText.text);
-            count += 10;
-            countText.text = count.ToString();
-
-            PlayerPrefs.SetInt("YOURSCORE", count);
-
-            int bestScore = PlayerPrefs.GetInt("BESTSCORE", 0);
-
-            if (bestScore < count)
-                PlayerPrefs.SetInt("BESTSCORE", count);
-
-            PlayerPrefs.Save();
+            CScoreManager.AddScore(10);
 
             Destroy(gameObject);
             //CObjectPool.current.PoolObject(gameObject);

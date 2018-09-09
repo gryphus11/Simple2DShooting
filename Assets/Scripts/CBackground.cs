@@ -4,8 +4,32 @@ using UnityEngine;
 
 public class CBackground : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    private static CBackground _currentBackground = null;
+
+    private void Awake()
+    {
+        if (_currentBackground == null)
+        {
+            _currentBackground = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
+        Screen.SetResolution(405, 720, false);
         DontDestroyOnLoad(gameObject);
 	}
+
+    private void OnDestroy()
+    {
+        if (_currentBackground != null)
+        {
+            _currentBackground = null;
+            Destroy(gameObject);
+        }
+    }
 }

@@ -27,7 +27,7 @@ public class CShipDamage : MonoBehaviour, IObjectConflict
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    protected virtual void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Laser")
         {

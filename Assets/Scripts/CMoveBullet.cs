@@ -40,7 +40,8 @@ public class CMoveBullet : CDirectionMove, IObjectConflict {
 
                 Destroy(effect, 0.5f);
             }
-            animator.Play("Damage", 0);
+
+            //animator.Play("Damage", 0);
             DestroyObject();
         }
     }
