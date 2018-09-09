@@ -7,9 +7,10 @@ public class CSpaceCollision : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (collision.tag == "Missile" || collision.tag == "Laser" || collision.tag == "Player")
+        if (collision.tag == "Laser" || collision.tag == "Player")
             return;
         else
-            Destroy(collision.gameObject);
+            CObjectPool.current.PoolObject(collision.gameObject);
+            //Destroy(collision.gameObject);
     }
 }

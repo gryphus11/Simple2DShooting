@@ -6,7 +6,7 @@ public class CInputMove : MonoBehaviour {
 
     public float speed = 0.0f;
 
-    private const float LIMIT_POS_X = 2.2f;
+    private const float LIMIT_POS_X = 3.2f;
     private const float LIMIT_POS_Y = 4.5f;
 
 	// Use this for initialization
